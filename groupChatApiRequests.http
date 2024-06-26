@@ -1,0 +1,91 @@
+
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "gkjhd"
+}
+###
+
+POST http://localhost:3000/api/logout
+Content-Type: application/json
+
+{
+  "username": "prakash1",
+  "password": "123456"
+}
+###
+
+POST http://localhost:3000/api/users
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2N2JjNTdhOWYwMTM1ZDhiN2UyZDFkMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxOTM4ODI5MywiZXhwIjoxNzE5MzkxODkzfQ.Rz74I1MyOXZR5oqU5oTeDx5iO-RW7isp9SgbZERLfNk
+
+{
+  "username": "test",
+  "password": "gkjhd",
+  "role": "user",
+  "requesterRole": "admin"
+}
+###
+
+PUT  http://localhost:3000/api/users/667bc3d9c68ad36c53b83bf4
+Content-Type: application/json
+Authorization: Bearer 01a71578351a08a24c187944a2da24bd0440924c20ac15bc130df3a89bc2314af90948ad32fc865537a263af83d3fb6e9b5dd1aa2e995f669935c421bef8ff94
+
+{
+  "username": "prakash2",
+  "password": "1234567",
+  "role": "user",
+  "requesterRole": "admin"
+}
+###
+
+POST http://localhost:3000/api/groups
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2N2JlMGUwY2NhNmVjNWJlZjgzMWFkOCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE5Mzk0NTUwLCJleHAiOjE3MTkzOTgxNTB9.hEzxqYsJT1rJUITMqlFkpxOiw1v_2X3vpvwCrLqU5lY
+
+{
+  "name": "test3"
+}
+
+###
+DELETE  http://localhost:3000/api/groups/667bcfbb8fa568cfe0f0ca3d
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2N2JjNTdhOWYwMTM1ZDhiN2UyZDFkMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxOTM4ODg1MSwiZXhwIjoxNzE5MzkyNDUxfQ.vHrWfuhNh39X5lKUZm5b3-a9c0qlGKiO4pqsFGlL5dM
+
+
+###
+POST http://localhost:3000/api/groups/addMember
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2N2JjNTdhOWYwMTM1ZDhiN2UyZDFkMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxOTM4ODg1MSwiZXhwIjoxNzE5MzkyNDUxfQ.vHrWfuhNh39X5lKUZm5b3-a9c0qlGKiO4pqsFGlL5dM
+
+{
+  "groupId": "667bcfda8fa568cfe0f0ca40",
+  "userId": "667bc3d9c68ad36c53b83bf4"
+}
+###
+
+GET  http://localhost:3000/api/groups?name=test2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2N2JjNTdhOWYwMTM1ZDhiN2UyZDFkMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxOTM4ODg1MSwiZXhwIjoxNzE5MzkyNDUxfQ.vHrWfuhNh39X5lKUZm5b3-a9c0qlGKiO4pqsFGlL5dM
+
+###
+
+POST http://localhost:3000/api/messages
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2N2JlMGUwY2NhNmVjNWJlZjgzMWFkOCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE5Mzk0NTUwLCJleHAiOjE3MTkzOTgxNTB9.hEzxqYsJT1rJUITMqlFkpxOiw1v_2X3vpvwCrLqU5lY
+
+{
+  "groupId": "667be112cca6ec5bef831adb",
+  "content": "hi"
+}
+###
+
+POST http://localhost:3000/api/messages/667bccc8bec77f4ca8b73d21/like
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2N2JjNTdhOWYwMTM1ZDhiN2UyZDFkMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxOTM4ODI5MywiZXhwIjoxNzE5MzkxODkzfQ.Rz74I1MyOXZR5oqU5oTeDx5iO-RW7isp9SgbZERLfNk
+
+{
+}
+###
